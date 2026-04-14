@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Мурас Архив - Үй-бүлөлүк галерея</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container" id="app">
+    <!-- Логин панели (бир гана пароль) -->
+    <div id="loginSection" class="login-section">
+        <div class="logo-icon">📖✨</div>
+        <h1>Мурас Архив</h1>
+        <div class="subtitle">Үй-бүлөбүздүн жылуу учурлары</div>
+        <div class="login-card">
+            <input type="password" id="accessCode" class="login-input" placeholder="🔐 Үй-бүлөлүк пароль" autocomplete="off">
+            <button class="login-btn" onclick="attemptLogin()">🍃 Кире берүү</button>
+            <div id="loginError" class="error-msg"></div>
+        </div>
+        <div class="info-badge">
+            🌟 Ар бир сүрөт же видеону 10 адам гана көрө алат
+        </div>
+    </div>
+
+    <!-- Галерея бөлүмү -->
+    <div id="gallerySection" class="gallery-section">
+        <div class="gallery-header">
+            <h2>
+                <span>🏡</span> Үй-бүлөлүк жомок
+            </h2>
+            <div class="user-info">
+                <div class="avatar" id="userAvatar">👤</div>
+                <span id="currentUserName" style="font-weight:500;"></span>
+                <button class="logout-btn" onclick="logout()">Чыгуу</button>
+            </div>
+        </div>
+
+        <div class="upload-area">
+            <label class="upload-label" for="fileUpload">
+                📸 + Жаңы эскерүү кошуу
+            </label>
+            <input type="file" id="fileUpload" class="file-input" accept="image/*,video/*" multiple>
+            <div class="upload-hint">Сүрөттөр, видеолор — бардык үй-бүлө мүчөлөрү кошо алат</div>
+        </div>
+
+        <div id="mediaGrid" class="media-grid"></div>
+        <div id="accessLimitWarning" class="access-limit" style="display: none;">
+            💎 Кээ бир медиа 9 жолу көрүлгөн — дагы 1 адам гана көрө алат
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
